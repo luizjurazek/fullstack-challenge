@@ -3,7 +3,7 @@ const formatOrders = (rows) => {
   
   // Iterar sobre os resultados e agrupar os itens do pedido por order_id
   rows.forEach(row => {
-    const { order_id, order_date, ...rest } = row;
+    const { order_id, order_date,...rest } = row;
     if (!ordersMap.has(order_id)) {
       ordersMap.set(order_id, { id_order: order_id, order_date: order_date, items: [] });
     }
