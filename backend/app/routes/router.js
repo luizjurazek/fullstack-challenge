@@ -1,10 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const OrderController = require('../controllers/OrderController')
 
-router.get('/teste', (req, res) => {
-    // #swagger.tags = ['Teste']
-    // #swagger.description = 'Teste.'
-    console.log("Teste route")
-})
+router.get('/orders', OrderController.getOrders)
+router.get('/order/:id', OrderController.getOrderById)
 
 module.exports = router
